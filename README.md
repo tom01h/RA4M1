@@ -1,9 +1,11 @@
 # Arduino UNO R4 もどき
-
+![](weather.png)
 ## 買ったもの
 
 - [これ(WeActStudio RA4M1)](https://ja.aliexpress.com/item/1005006103872563.html)の3.3V版
-- 基板作っているところ
+- 基板作ったけどピン数間違ってた
+    - 3V3,206,408,409の4本はつないじゃダメ
+    - LCDとI2C(J8)とUART(J7)は使えた
 
 ## Arduino化
 
@@ -30,3 +32,15 @@
 - u8g2ライブラリをインストールする
 - GND-＞GND:VCC-＞VCC:100->SCK:101->SDA につなぐ
 - OLED.ino を書き込む
+
+## 温室気圧・CO2濃度計
+BME280とMH-Z19をつないで温度・湿度・気圧と二酸化炭素濃度を表示する  
+5V電源がないので外部から持ってくる（GNDに注意！！）
+- インストールするライブラリ
+    - u8g2
+    - SparkFun BME280
+    - Mzh19 by Eduard
+- ピン配は以下の図を参照
+- weather.inoを書き込む
+
+![](pin.png)
