@@ -27,7 +27,7 @@
 - 他にも[サンプルがある](https://github.com/arduino/ArduinoCore-renesas/tree/main/libraries)
 
 ## OLED 表示
-- [これ](https://ja.aliexpress.com/item/32850288143.html)に表示する
+- SSD1306を使っている[128x32 OLED LCD](https://ja.aliexpress.com/item/32850288143.html)に表示する
 - [ここ](https://101010.fun/iot/arduino-oled-display.html)を参考にした
 - u8g2ライブラリをインストールする
 - GND-＞GND:VCC-＞VCC:100->SCK:101->SDA につなぐ
