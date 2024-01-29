@@ -44,3 +44,8 @@ BME280とMH-Z19をつないで温度・湿度・気圧と二酸化炭素濃度�
 - weather.inoを書き込む
 
 ![](pin.png)
+
+## 時計
+RTC電池を使って時計を動かす（純正のR4 Minimaには電池繋げません）
+- [バッテリバックアップを使うとき](https://docs.arduino.cc/tutorials/uno-r4-wifi/vrtc-off/)を参考に改変
+- 内蔵クロックを使うと時計の精度がとっても悪いので[外部のオシレータを使う方法](https://me-yoh.com/arduino-uno-r4-rtc-fix)
