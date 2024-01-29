@@ -151,9 +151,6 @@ void alarmCallback() {
 
 void setup()
 {
-  Serial.begin(9600);
-  while (!Serial) ;
-  
   u8g2.begin();
 
   // Initialize the RTC
@@ -172,20 +169,8 @@ void setup()
   }
 
   // Retrieve the date and time from the RTC and print them
-  Serial.println("The RTC was just set to: ");
   RTCTime currentTime;
   RTC.getTime(currentTime); 
-  Serial.print(currentTime.getYear());
-  Serial.print("-");
-  Serial.print(Month2int(currentTime.getMonth()));
-  Serial.print("-");
-  Serial.print(currentTime.getDayOfMonth());
-  Serial.print(" ");
-  Serial.print(currentTime.getHour());
-  Serial.print(":");
-  Serial.print(currentTime.getMinutes());
-  Serial.print(":");
-  Serial.println(currentTime.getSeconds());
 
   char buf[10];
   u8g2.clearBuffer();
@@ -208,20 +193,8 @@ void setup()
 void loop()
 {
   if(alarmFlag){
-    Serial.println("An alarm was triggered at:");
     RTCTime currentTime;
     RTC.getTime(currentTime); 
-    Serial.print(currentTime.getYear());
-    Serial.print("-");
-    Serial.print(Month2int(currentTime.getMonth()));
-    Serial.print("-");
-    Serial.print(currentTime.getDayOfMonth());
-    Serial.print(" ");
-    Serial.print(currentTime.getHour());
-    Serial.print(":");
-    Serial.print(currentTime.getMinutes());
-    Serial.print(":");
-    Serial.println(currentTime.getSeconds());
 
     char buf[10];
     u8g2.clearBuffer();
