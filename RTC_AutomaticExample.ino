@@ -175,7 +175,7 @@ void setup()
   char buf[10];
   u8g2.clearBuffer();
   u8g2.setFont(u8g2_font_crox4h_tf);
-  sprintf(buf, "%2d:%2d", (int)currentTime.getHour(), currentTime.getMinutes());
+  sprintf(buf, "%02d:%02d", (int)currentTime.getHour(), currentTime.getMinutes());
   u8g2.drawStr(45, 15, buf);
 
   u8g2.sendBuffer();
@@ -199,7 +199,7 @@ void loop()
     char buf[10];
     u8g2.clearBuffer();
     u8g2.setFont(u8g2_font_crox4h_tf);
-    sprintf(buf, "%2d:%2d", (int)currentTime.getHour(), currentTime.getMinutes());
+    sprintf(buf, "%02d:%02d", (int)currentTime.getHour(), currentTime.getMinutes());
     u8g2.drawStr(45, 15, buf);
 
     u8g2.sendBuffer();
