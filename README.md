@@ -49,3 +49,9 @@ BME280とMH-Z19をつないで温度・湿度・気圧と二酸化炭素濃度�
 RTC電池を使って時計を動かす（純正のR4 Minimaには電池繋げません）
 - [バッテリバックアップを使うとき](https://docs.arduino.cc/tutorials/uno-r4-wifi/vrtc-off/)を参考に改変
 - 内蔵クロックを使うと時計の精度がとっても悪いので[外部のオシレータを使う方法](https://me-yoh.com/arduino-uno-r4-rtc-fix)
+
+## SPIフラッシュアクセス
+- ライブラリは[Arduino-W25Q64](https://github.com/Tamakichi/Arduino-W25Q64)
+- READMEに従って手動でライブラリをインストール
+- 繋いでいるのはW25Q32だけど使えるらしい
+- Arduino-W25Q64.inoを書き込む
