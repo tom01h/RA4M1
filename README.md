@@ -5,7 +5,7 @@
 - [これ(WeActStudio RA4M1)](https://ja.aliexpress.com/item/1005006103872563.html)の3.3V版
 - 基板作ったけどピン数間違ってた
     - 3V3,206,408,409の4本はつないじゃダメ
-    - LCDとI2C(J8)とUART(J7)は使えた
+    - LCDとI2C(J8)とUART(J7)とRTC電池(BT1)とSPIフラッシュ(U1)は使えた
 
 ## Arduino化
 
