@@ -3,9 +3,10 @@
 ## 買ったもの
 
 - [これ(WeActStudio RA4M1)](https://ja.aliexpress.com/item/1005006103872563.html)の3.3V版
-- 基板作ったけどピン数間違ってた
-    - 3V3,206,408,409の4本はつないじゃダメ
+- 基板作った
     - LCDとI2C(J8)とUART(J7)とRTC電池(BT1)とSPIフラッシュ(U1)は使えた
+    - 他にHX711とつなぐコネクタがある
+    - Analog入力も後で試す
 
 ## Arduino化
 
@@ -30,10 +31,10 @@
 - SSD1306を使っている[128x32 OLED LCD](https://ja.aliexpress.com/item/32850288143.html)に表示する
 - [ここ](https://101010.fun/iot/arduino-oled-display.html)を参考にした
 - u8g2ライブラリをインストールする
-- GND-＞GND:VCC-＞VCC:100->SCK:101->SDA につなぐ
+- GND-＞GND:VCC-＞VCC:100->SCK:101->SDA につなぐ（J4につなぐ）
 - OLED.ino を書き込む
 
-## 温室気圧・CO2濃度計
+## 温湿気圧・CO2濃度計
 BME280とMH-Z19をつないで温度・湿度・気圧と二酸化炭素濃度を表示する  
 5V電源がないので外部から持ってくる（GNDに注意！！）
 - インストールするライブラリ
@@ -46,12 +47,19 @@ BME280とMH-Z19をつないで温度・湿度・気圧と二酸化炭素濃度�
 ![](pin.png)
 
 ## 時計
-RTC電池を使って時計を動かす（純正のR4 Minimaには電池繋げません）
-- [バッテリバックアップを使うとき](https://docs.arduino.cc/tutorials/uno-r4-wifi/vrtc-off/)を参考に改変
+RTC電池を使って時計を動かす（純正のR4 Minimaには電池繋げません）  
+電池ホルターは[これ](https://ja.aliexpress.com/item/4000528748796.html)
+- 電池ホルダーBT1にCR1220を入れる
+- RTC_AutomaticExample.inoを書き込む
+- [バッテリバックアップを使うとき](https://docs.arduino.cc/tutorials/uno-r4-wifi/vrtc-off/)を参考に改変している
 - 内蔵クロックを使うと時計の精度がとっても悪いので[外部のオシレータを使う方法](https://me-yoh.com/arduino-uno-r4-rtc-fix)
+    - VBATTを使うと外部のオシレータを発振出来ていません
 
 ## SPIフラッシュアクセス
+
+[これ](https://ja.aliexpress.com/item/32326265518.html)
 - ライブラリは[Arduino-W25Q64](https://github.com/Tamakichi/Arduino-W25Q64)
 - READMEに従って手動でライブラリをインストール
+- U1につなぐ
 - 繋いでいるのはW25Q32だけど使えるらしい
 - Arduino-W25Q64.inoを書き込む
